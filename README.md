@@ -1,6 +1,7 @@
-# php-lamp-storage
-A LAMP PHP project with Persistence.
 
+A simple PHP web page to display a static image deployed in Cloud Object Storage. This web page is packaged in a docker container using Draft open soure tool and the deployed into Kubernetes on Bluemix.
+
+# Build a simple php page to display an image
 1. Create a PHP page with the following content
     ```html
     <html>
@@ -28,6 +29,17 @@ A LAMP PHP project with Persistence.
     </html>
     ```
 
+1. Create a file composer.json with the following content
+    ```json
+    {
+        "require": {
+            "monolog/monolog": "^1.23"
+        }
+    }
+    ```
+
+# Build docker image
+
 1. Create Dockerfile with Draft
     ```
     draft create -p php
@@ -38,6 +50,7 @@ A LAMP PHP project with Persistence.
     docker build -t registry.eu-de.bluemix.net/mace/phpstorage:v1 .
     ```
 
+# Run docker image locally
 1. Run docker image
     ```
     docker run -p 80:80 registry.eu-de.bluemix.net/mace/phpstorage:v1
