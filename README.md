@@ -24,10 +24,10 @@ A simple PHP web page to display a static image deployed in Cloud Object Storage
 </html>
 ```
 
-1. Region
+1. Select the private registry based on the Bluemix Regions
 
 | Bluemix Regions | Registry Endpoint           | Region ID |
-| --------------- |:---------------------------:| ---------:|      
+| --------------- | --------------------------- | --------- |      
 | US South        |	registry.ng.bluemix.net	    | ng        |
 | Germany         |	registry.eu-de.bluemix.net  | eu-de     |
 | Sydney          |	registry.au-syd.bluemix.net | au-syd    |
