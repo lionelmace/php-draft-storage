@@ -24,19 +24,27 @@ A simple PHP web page to display a static image deployed in Cloud Object Storage
 </html>
 ```
 
+1. Region
+
+| Bluemix Regions | Registry Endpoint           | Region ID |
+| --------------- |:---------------------------:| ---------:|      
+| US South        |	registry.ng.bluemix.net	    | ng        |
+| Germany         |	registry.eu-de.bluemix.net  | eu-de     |
+| Sydney          |	registry.au-syd.bluemix.net | au-syd    |
+
 1. Build docker image
     ```
-    docker build -t registry.ng.bluemix.net/<namespace>/phpstorage:v1 .
+    docker build -t registry.<region>.bluemix.net/<namespace>/phpstorage:v1 .
     ```
 
 1. Run docker image locally
     ```
-    docker run -p 80:80 registry.ng.bluemix.net/<namespace>/phpstorage:v1
+    docker run -p 80:80 registry.<region>.bluemix.net/<namespace>/phpstorage:v1
     ```
 
 1. Push docker image to Bluemix Private Registry
     ```
-    docker push registry.eu-de.bluemix.net/<namespace>/phpstorage:v1
+    docker push registry.<region>.bluemix.net/<namespace>/phpstorage:v1
     ```
 
 1. Build docker image
