@@ -1,0 +1,39 @@
+---
+# Application to deploy
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: phpstorage
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: phpstorage
+        tier: frontend
+    spec:
+      containers:
+      - name: phpstorage
+        image: registry.eu-de.bluemix.net/mace/phpstorage:v1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+---
+# Service to expose frontend
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpstorage
+  labels:
+    app: phpstorage
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 80 # Internal Port
+    nodePort: 31513
+  selector:
+    app: phpstorage
+    tier: frontend
