@@ -1,6 +1,10 @@
 
 This sample is a simple PHP web page packaged into a docker container. This web page displays using S3 API a static image stored in a service [Cloud Object Storage](https://console.bluemix.net/catalog/infrastructure/cloud_object_storage). This container is deployed into Kubernetes on Bluemix.
 
+Below is the simple web page:
+
+![](./phpscreenshot.png)
+
 Below is the complete code of the PHP page:
 
 ```html
